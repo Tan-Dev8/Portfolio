@@ -40,7 +40,6 @@
             --glass: rgba(255,255,255,0.75);
             --code-bg: #f1f5f9;
             --binary-opacity: 0.08;
-            --terminal-glow: rgba(59,130,246,0.2);
         }
 
         /* ========== DARK MODE VARIABLES ========== */
@@ -60,7 +59,6 @@
             --glass: rgba(17,24,39,0.85);
             --code-bg: #0f172a;
             --binary-opacity: 0.15;
-            --terminal-glow: rgba(96,165,250,0.25);
         }
 
         /* BINARY BACKGROUND CANVAS */
@@ -84,7 +82,6 @@
             z-index: 2;
         }
 
-        /* glass navbar with red accent underline */
         .navbar {
             backdrop-filter: blur(16px);
             background: var(--glass);
@@ -111,7 +108,6 @@
             background-clip: text;
             color: transparent;
             letter-spacing: -0.5px;
-            position: relative;
         }
 
         .nav-links {
@@ -168,7 +164,6 @@
             transform: scale(1.02);
         }
 
-        /* modern buttons with red accent */
         .btn {
             display: inline-block;
             background: linear-gradient(135deg, var(--accent), var(--accent-red-dark));
@@ -203,7 +198,6 @@
             box-shadow: 0 10px 25px rgba(220,38,38,0.3);
         }
 
-        /* Hero Section */
         .hero {
             padding: 4rem 0 3rem;
             display: flex;
@@ -266,7 +260,6 @@
             box-shadow: var(--shadow-md);
             transition: transform 0.3s ease, box-shadow 0.3s;
             border: 3px solid var(--accent-red);
-            cursor: pointer;
         }
 
         .profile-img:hover {
@@ -274,7 +267,6 @@
             box-shadow: 0 25px 35px -12px rgba(220,38,38,0.4);
         }
 
-        /* Section style with red underline */
         .section {
             padding: 4rem 0;
             border-bottom: 1px solid var(--border);
@@ -299,7 +291,6 @@
             border-radius: 4px;
         }
 
-        /* Skills grid */
         .skills-grid {
             display: flex;
             flex-wrap: wrap;
@@ -333,7 +324,6 @@
             background: linear-gradient(145deg, var(--bg-card), var(--code-bg));
         }
 
-        /* About text */
         .about-text {
             font-size: 1.1rem;
             line-height: 1.6;
@@ -342,7 +332,6 @@
             max-width: 800px;
         }
 
-        /* contact cards with red border on hover */
         .contact-cards {
             display: flex;
             flex-wrap: wrap;
@@ -377,7 +366,6 @@
             background: var(--glass);
         }
 
-        /* Typing cursor effect */
         .typed-text {
             border-right: 3px solid var(--accent-red);
             white-space: nowrap;
@@ -391,7 +379,6 @@
             50% { border-color: transparent; }
         }
 
-        /* Terminal panel */
         .terminal-widget {
             background: var(--bg-card);
             border-radius: 16px;
@@ -440,7 +427,6 @@
             font-weight: bold;
         }
 
-        /* footer */
         .footer {
             text-align: center;
             padding: 2rem 0;
@@ -448,7 +434,6 @@
             font-size: 0.85rem;
         }
 
-        /* responsive */
         @media (max-width: 780px) {
             .hero {
                 flex-direction: column-reverse;
@@ -477,7 +462,6 @@
             }
         }
 
-        /* fade-up animation */
         .fade-up {
             opacity: 0;
             transform: translateY(25px);
@@ -500,7 +484,6 @@
             border-radius: 8px;
         }
         
-        /* stat card */
         .stat-card {
             display: flex;
             gap: 1.5rem;
@@ -551,7 +534,6 @@
                     <a href="#contact" class="btn"><i class="fas fa-paper-plane"></i> Contact me</a>
                     <a href="https://github.com/Tan-Dev8" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
                 </div>
-                <!-- stat cards -->
                 <div class="stat-card">
                     <div class="stat-item"><span class="stat-number" id="projectCount">0</span><br>Projects Completed</div>
                     <div class="stat-item"><span class="stat-number">3+</span><br>Years of Code</div>
@@ -559,11 +541,12 @@
                 </div>
             </div>
             <div class="hero-image fade-up">
-                <img src="https://ui-avatars.com/api/?background=dc2626&color=fff&rounded=true&size=280&bold=true&name=TJT" 
+                <!-- 👇 PALITAN MO LANG ANG SRC NG IMAGE DITO 👇 -->
+                <img src="tan.png" 
                      alt="Thristan Jay Tarinay" 
                      class="profile-img"
-                     id="profilePhoto"
-                     title="Click to upload your photo">
+                     id="profilePhoto">
+                <!-- 👆 PALITAN MO LANG ANG VALUE NG src= DITO 👆 -->
             </div>
         </section>
 
@@ -579,7 +562,6 @@
                         <span><i class="fas fa-heart" style="color: var(--accent-red);"></i> Open Source & Coding</span>
                     </div>
                 </div>
-                <!-- terminal widget for fun -->
                 <div class="terminal-widget fade-up">
                     <div class="terminal-header">
                         <div class="terminal-dot"></div>
@@ -717,7 +699,6 @@
             updateBinaryColors();
         });
         
-        // dark mode toggle with binary recoloring
         const toggleBtn = document.getElementById('darkmode-toggle');
         const themeTextSpan = document.getElementById('theme-text');
         
@@ -748,7 +729,7 @@
         resizeCanvas();
         startBinaryRain();
         
-        // ========== TYPING EFFECT with dynamic role ==========
+        // ========== TYPING EFFECT ==========
         const roles = ["Full-Stack Developer", "Laravel & React Artisan", "Vue Enthusiast", "Code & Coffee Lover"];
         let roleIndex = 0, charIndex = 0;
         const typingElement = document.getElementById('typingEffect');
@@ -769,8 +750,7 @@
         }
         typeRole();
         
-        // ========== PROJECT COUNTER ANIMATION ==========
-        let projectCount = 0;
+        // ========== PROJECT COUNTER ==========
         const projectSpan = document.getElementById('projectCount');
         function animateProjectCount() {
             let target = 28;
@@ -785,7 +765,6 @@
             }, 45);
         }
         
-        // Intersection Observer for fade-up and counter
         const fadeElements = document.querySelectorAll('.fade-up');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -800,39 +779,14 @@
         }, { threshold: 0.2 });
         
         fadeElements.forEach(el => observer.observe(el));
-        // manually show if already visible
+        
         window.addEventListener('load', () => {
             fadeElements.forEach(el => {
                 const rect = el.getBoundingClientRect();
                 if (rect.top < window.innerHeight - 100) el.classList.add('visible');
             });
-            animateProjectCount(); // start project counter anyway
+            animateProjectCount();
         });
-        
-        // photo upload
-        const profileImage = document.getElementById('profilePhoto');
-        profileImage.addEventListener('click', () => {
-            const fileInput = document.createElement('input');
-            fileInput.type = 'file';
-            fileInput.accept = 'image/jpeg, image/png, image/jpg';
-            fileInput.style.display = 'none';
-            document.body.appendChild(fileInput);
-            fileInput.addEventListener('change', (e) => {
-                const file = e.target.files[0];
-                if (file && file.type.startsWith('image/')) {
-                    const reader = new FileReader();
-                    reader.onload = ev => {
-                        profileImage.src = ev.target.result;
-                        localStorage.setItem('userProfilePhoto', ev.target.result);
-                    };
-                    reader.readAsDataURL(file);
-                } else alert('Please select a valid image');
-                document.body.removeChild(fileInput);
-            });
-            fileInput.click();
-        });
-        const savedPhotoLocal = localStorage.getItem('userProfilePhoto');
-        if (savedPhotoLocal && savedPhotoLocal.startsWith('data:image')) profileImage.src = savedPhotoLocal;
         
         // smooth scroll
         document.querySelectorAll('.nav-links a[href^="#"], .btn[href^="#"]').forEach(anchor => {
@@ -847,7 +801,7 @@
             });
         });
         
-        // dynamic role badge animation change
+        // dynamic role badge
         setInterval(() => {
             const badgeSpan = document.getElementById('dynamicRole');
             if (badgeSpan) {
@@ -857,8 +811,7 @@
             }
         }, 3000);
         
-        profileImage.ondragstart = (e) => e.preventDefault();
-        console.log("🔥 Redefined dev portfolio with binary rain & modern UI");
+        console.log("🔥 Dev portfolio ready - Palitan mo na lang ang src ng image sa HTML!");
     </script>
 </body>
 </html>
